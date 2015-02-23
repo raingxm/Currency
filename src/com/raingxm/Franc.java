@@ -5,12 +5,7 @@ package com.raingxm;
  */
 public class Franc extends Money{
 
-    public Franc(int amount, String currency) {
+    Franc(int amount, String currency) {
         super(amount, currency);
     }
-
-    public Money times(int time) {
-        return Money.franc(amount * time);
-    }
-
 }
