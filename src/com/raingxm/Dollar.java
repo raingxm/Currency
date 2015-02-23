@@ -5,12 +5,11 @@ package com.raingxm;
  */
 public class Dollar extends Money{
 
-    public Dollar(int amount) {
-        this.amount = amount;
+    public Dollar(int amount, String currency) {
+        super(amount, currency);
     }
 
-    public Dollar times(int time) {
-        return new Dollar(amount * time);
+    public Money times(int time) {
+        return Money.dollar(amount * time);
     }
-
 }

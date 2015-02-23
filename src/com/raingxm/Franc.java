@@ -5,17 +5,12 @@ package com.raingxm;
  */
 public class Franc extends Money{
 
-    public Franc(int amount) {
-        this.amount = amount;
+    public Franc(int amount, String currency) {
+        super(amount, currency);
     }
 
-    public Franc times(int time) {
-        return new Franc(amount * time);
+    public Money times(int time) {
+        return Money.franc(amount * time);
     }
 
-    @Override
-    public boolean equals(Object object) {
-        Franc dollar = (Franc) object;
-        return amount == dollar.amount;
-    }
 }
