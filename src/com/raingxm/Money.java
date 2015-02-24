@@ -3,7 +3,7 @@ package com.raingxm;
 /**
  * Created by xuzhang on 2/22/15.
  */
-public  class Money {
+public class Money implements Expression {
     protected int amount;
     protected String currency;
 
@@ -27,6 +27,10 @@ public  class Money {
 
     public static Money franc(int amount) {
         return new Money(amount, "CHF");
+    }
+
+    public Expression plus(Money dollar) {
+        return new Money(amount + dollar.amount, currency);
     }
 
     public String currency() {
