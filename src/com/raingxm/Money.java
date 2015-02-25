@@ -29,8 +29,8 @@ public class Money implements Expression {
         return new Money(amount, "CHF");
     }
 
-    public Expression plus(Money dollar) {
-        return new Money(amount + dollar.amount, currency);
+    public Expression plus(Money addend) {
+        return new Sum(this, addend);
     }
 
     public String currency() {
