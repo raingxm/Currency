@@ -4,10 +4,10 @@ package com.raingxm;
  * Created by xuzhang on 2/22/15.
  */
 public class Money implements Expression {
-    protected int amount;
+    public int amount;
     protected String currency;
 
-    public Money(int amount, String currency) {
+    Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
     }
@@ -31,6 +31,10 @@ public class Money implements Expression {
 
     public Expression plus(Money addend) {
         return new Sum(this, addend);
+    }
+
+    public Money reduce(String to) {
+        return this;
     }
 
     public String currency() {
